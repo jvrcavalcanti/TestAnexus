@@ -11,6 +11,10 @@ class UserController extends Controller
     public function test()
     {
         $tree = BinaryTree::build(User::all()->map(fn($user) => $user->toArray()));
-        return view('welcome', [ 'users' => $tree->toArray() ]);
+        return view('welcome', [
+            'users' => $tree->toArray(),
+            'totalLeft' => $tree->totalLeft(),
+            'totalRight' => $tree->totalRight()
+        ]);
     }
 }

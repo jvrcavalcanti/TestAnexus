@@ -10,10 +10,11 @@
     </head>
     <body class="bg-secondary">
         <ul class="list-group text-center container mt-5">
-        @foreach ($users as $user)
-            <li class="list-group-item">
+        @foreach ($users as $key => $user)
+            <li class="list-group-item @if(!$key) active @endif">
                 <h2>Nome: {{ $user['name'] }}</h2>
                 <p>Pontos do usuário: {{ $user['pts'] }}</p>
+                @if(!$key) Total da esquerda: {{ $totalLeft }} Total da direita: {{ $totalRight }} @endif 
                 <p>
                     @isset($user['left']) Pontos a esquerda: {{ $user['left'] }} @endisset
                     @isset($user['right']) Pontos a direita: {{ $user['right'] }} @endisset

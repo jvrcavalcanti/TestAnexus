@@ -15,6 +15,21 @@ class Node
         $this->rightNode = $rightNode;
     }
 
+    public function totalPts($pts = 0)
+    {
+        $total = $pts + $this->value['pts'];
+
+        if ($this->leftNode) {
+            $total += $this->leftNode->totalPts($pts);
+        }
+
+        if ($this->rightNode) {
+            $total += $this->rightNode->totalPts($pts);
+        }
+
+        return $total;
+    }
+
     public function toArray(&$arr)
     {
         $arr[] = &$this->value;

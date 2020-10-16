@@ -46,6 +46,24 @@ class BinaryTree
         }
     }
 
+    public function totalLeft()
+    {
+        if (!$this->root || !$this->root->leftNode) {
+            return 0;
+        }
+
+        return $this->root->leftNode->totalPts();
+    }
+
+    public function totalRight()
+    {
+        if (!$this->root || !$this->root->rightNode) {
+            return 0;
+        }
+
+        return $this->root->rightNode->totalPts();
+    }
+
     public function toArray()
     {
         if (is_null($this->root)) {
