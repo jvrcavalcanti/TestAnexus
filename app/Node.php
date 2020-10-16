@@ -34,7 +34,7 @@ class Node
     {
         if (!is_null($this->leftNode) && !is_null($this->rightNode)) {
             if (!$this->leftNode->addNode($node)) {
-                $this->rightNode->addNode($node);
+                return $this->rightNode->addNode($node);
             }
         }
 

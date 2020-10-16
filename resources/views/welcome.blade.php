@@ -8,8 +8,8 @@
 
         <title>Laravel</title>
     </head>
-    <body>
-        <ul class="list-group text-center">
+    <body class="bg-secondary">
+        <ul class="list-group text-center container mt-5">
         @foreach ($users as $user)
             <li class="list-group-item">
                 <h2>Nome: {{ $user['name'] }}</h2>
